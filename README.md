@@ -14,4 +14,3 @@ graph TD
     C -- Fail --> F[Alert & Rollback];
     D --> G{Teardown Old Blue};
 ```
-```
