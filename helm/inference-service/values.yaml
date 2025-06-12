@@ -1,0 +1,9 @@
+# Default values for the inference service chart.
+# liveColor determines which deployment receives production traffic.
+liveColor: blue
+
+blue:
+  tag: "1.0.0"
+
+green:
+  tag: "1.1.0"

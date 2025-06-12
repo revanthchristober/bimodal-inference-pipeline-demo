@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+  # This selector is the key to blue/green. It only sends traffic
+  # to the pods whose color matches the 'liveColor' value.
+  selector:
+    app: {{ .Chart.Name }}-{{ .Values.liveColor }}

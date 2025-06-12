@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-blue
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-blue
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}-blue
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "your-dockerhub-user/model-server:{{ .Values.blue.tag }}"
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: inference-service
+description: A Helm chart for Blue/Green deployments
+version: 0.1.0
